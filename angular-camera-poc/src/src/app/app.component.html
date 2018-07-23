@@ -1,0 +1,23 @@
+<div id="app">
+  <div *ngIf="temCamera">
+    <div>
+      <video #video id="video" width="640" height="480" autoplay></video>
+    </div>
+    <br /><br />
+    <div>
+      <button id="snap" (click)="captura()">
+        Tirar Foto
+      </button>
+    </div>
+    <br /><br />
+    <canvas #canvas id="canvas" width="640" height="480"></canvas>
+    <ul>
+      <li *ngFor="let c of capturas">
+        <img src="{{ c }}" width="640" height="480" />
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="!temCamera">
+    <h5>{{ mensagem }}</h5>
+  </div>
+</div>
